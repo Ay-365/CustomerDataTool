@@ -6,7 +6,7 @@ from scipy.stats import linregress
 def load_data(file_path):
     try:
         data = pd.read_csv(file_path)
-        data['Date'] = pd.to_datetime(data['Date'])
+        data['Date'] = pd.to_datetime(data['Date'],dayfirst=True)
         return data
     except FileNotFoundError:
         print("Error: File not found. Make sure the CSV file is in the correct location.")
